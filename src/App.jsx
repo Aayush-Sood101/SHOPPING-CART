@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Fragment } from "react"
+import { Routes , Route } from "react-router-dom"
+import ProductListPage from "./pages/product-list"
+import ProductDetailsPage from "./pages/product-details"
+import CartListPage from "./pages/cart-list"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div>
-      <h1>React</h1>
-    </div>
+    <Fragment>
+      <Routes>
+        <Route path="/product-list" element={<ProductListPage/>}></Route>
+        <Route path="/product-details/:id" element={<ProductDetailsPage />}></Route>
+        <Route path="cart-list" element={<CartListPage />}></Route>
+      </Routes>
+    </Fragment>
   )
 }
 
